@@ -53,7 +53,7 @@ const AddRecipe = () => {
 
     try {
       const response = await fetch(
-        "https://recipe-app-mern.onrender.com/auth/recipe",
+        "http://localhost:2000/auth/recipe",
         {
           method: "POST",
           headers: {
@@ -79,6 +79,7 @@ const AddRecipe = () => {
   };
 
   return (
+
     <div className="add-recipe">
       <h2>Add Recipe</h2>
       <form onSubmit={handleSubmit}>

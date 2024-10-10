@@ -12,6 +12,7 @@ import ForgotPassword from "./components/ForgotPassword";
 function App() {
   return (
     <Router>
+      
       <Navbar />
 
       <Routes>
