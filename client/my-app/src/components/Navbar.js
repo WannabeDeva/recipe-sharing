@@ -37,7 +37,10 @@ const Navbar = () => {
             style={isOpen ? { transform: "rotate(90deg)" } : {}}
           />
 
-          <h2>Recipe Sharing App</h2>
+          
+          <NavLink to="/" onClick={handleToggleMenu}>
+          <h2>Khana Khajana</h2>
+                  </NavLink>{" "}
         </div>
         <div className={`nav-right ${isOpen ? "open" : ""}`}>
           <ul>

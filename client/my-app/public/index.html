@@ -1,43 +1,116 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="public/artisan_logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Khana Khajana</title>
+    <style>
+      #google_translate_element {
+        position: fixed;
+        top: 60px;
+        right: 10px;
+        z-index: 1000;
+        display: none; /* Initially hidden */
+      }
+      
+      /* Customize the dropdown button */
+      .goog-te-gadget-simple {
+        background-color: #f0f0f0;
+        border: 1px solid #ccc;
+        padding: 5px;
+        border-radius: 4px;
+        font-family: Arial, sans-serif;
+      }
+      
+      /* Customize the language menu */
+      .goog-te-menu-value {
+        color: #333;
+        font-weight: bold;
+      }
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/logo.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title></title>
+  <style>
+    #google_translate_element {
+      position: fixed;
+      top: 60px;
+      right: 10px;
+      z-index: 1000;
+      display: none;
+      /* Initially hidden */
+    }
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+    /* Customize the dropdown button */
+    .goog-te-gadget-simple {
+      background-color: #f0f0f0;
+      border: 1px solid #ccc;
+      padding: 5px;
+      border-radius: 4px;
+      font-family: Arial, sans-serif;
+    }
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+    /* Customize the language menu */
+    .goog-te-menu-value {
+      color: #333;
+      font-weight: bold;
+    }
+
+    /* Style for the toggle button */
+    #translateToggle {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      z-index: 1001;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 555px;
+      cursor: pointer;
+    }
+
+    #ima {
+      width: 20px;
+    }
+
+    #translateToggle:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="google_translate_element"></div>
+  <button id="translateToggle">
+    <img src="https://cdn-icons-png.flaticon.com/512/281/281776.png" alt="" id="ima">
+  </button>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement(
+        { pageLanguage: 'en' },
+        'google_translate_element'
+      );
+    }
+
+    // Toggle visibility of Google Translate element
+    document.getElementById('translateToggle').addEventListener('click', function () {
+      var translateElement = document.getElementById('google_translate_element');
+      if (translateElement.style.display === 'none' || translateElement.style.display === '') {
+        translateElement.style.display = 'block';
+      } else {
+        translateElement.style.display = 'none';
+      }
+    });
+  </script>
+
+  <script type="text/javascript"
+    src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+
 </html>

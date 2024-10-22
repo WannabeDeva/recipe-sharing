@@ -8,6 +8,7 @@ import Recipes from "./components/Recipes";
 import AddRecipe from "./components/AddRecipe";
 import LikedProducts from "./components/likedProducts";
 import ForgotPassword from "./components/ForgotPassword";
+import Home from "./components/Home";
 
 function App() {
   return (
@@ -23,7 +24,7 @@ function App() {
         <Route element={<PrivateComponent />}>
           <Route path="/favouriteRecipes" element={<LikedProducts />} />
           <Route path="/recipes" element={<Recipes />} />
-          <Route path="/" element={<Recipes />} />
+          <Route path="/" element={<Home />} />
           <Route path="/addRecipe" element={<AddRecipe />} />
         </Route>
       </Routes>
