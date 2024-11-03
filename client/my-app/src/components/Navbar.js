@@ -40,6 +40,7 @@ const Navbar = () => {
           
           <NavLink to="/" onClick={handleToggleMenu}>
           <img src="https://i.ibb.co/NVdpPWM/image-removebg-preview-25.png" alt="Logo" className="logo"></img>
+          <h2>Khana Khajana</h2>
                   </NavLink>{" "}
         </div>
         <div className={`nav-right ${isOpen ? "open" : ""}`}>

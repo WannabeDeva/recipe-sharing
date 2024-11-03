@@ -204,6 +204,16 @@ const Recipes = () => {
         <div className="relative mb-8">
           <div className="absolute inset-y-0 left-4 flex items-center pointer-events-none">
             <Search className="h-5 w-5 text-gray-400" />
+
+      <div className="bg-gray-100 min-h-screen">
+        <div className="container mx-auto px-4 py-8 mt-14">
+          <div className="mb-8">
+            <input
+              type="text"
+              className="w-full p-4 rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="Search recipes"
+              onChange={(e) => searchRecipes(e.target.value)}
+            />
           </div>
           <input
             type="text"
@@ -229,6 +239,73 @@ const Recipes = () => {
         {isLoading ? (
           <div className="flex items-center justify-center min-h-[400px]">
             <div className="text-xl text-gray">Loading recipes...</div>
+         
+
+          <h1 className="text-4xl font-bold mb-8">Huge selection of delicious recipe ideas</h1>
+
+          {isLoading ? (
+            <div className="text-center">
+              <p className="text-xl">Loading recipes...</p>
+            </div>
+          ) : recipes.length > 0 ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {recipes.map((recipe) => (
+                <div key={recipe._id} className="bg-white rounded-lg shadow-md overflow-hidden">
+                  <img src={recipe.imageUrl} alt={recipe.title} className="w-full h-48 object-cover" />
+                  <div className="p-6">
+                    <h2 className="text-2xl font-bold mb-4">{recipe.title}</h2>
+                    
+                    <h3 className="text-xl font-semibold mb-2">Ingredients:</h3>
+                    <ul className="list-disc list-inside mb-4">
+                      {recipe.ingredients.map((ingredient, index) => (
+                        <li key={index}>{ingredient}</li>
+                      ))}
+                    </ul>
+                    
+                    <h3 className="text-xl font-semibold mb-2">Instructions:</h3>
+                    {recipe.instructions.match(/^\d+\./) ? (
+                      <div className="space-y-2">
+                        {recipe.instructions.split("\n").map((step, index) => (
+                          <p key={index}>{step}</p>
+                        ))}
+                      </div>
+                    ) : (
+                      <ol className="list-decimal list-inside space-y-2">
+                        {recipe.instructions.split("\n").map((step, index) => (
+                          <li key={index}>{step}</li>
+                        ))}
+                      </ol>
+                    )}
+                    
+                    <div className="mt-6 flex space-x-4">
+                      <button
+                        className="bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600 transition"
+                        onClick={() => handleDeleteRecipe(recipe._id)}
+                      >
+                        Delete
+                      </button>
+                      <button
+                        className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition"
+                        onClick={() => handleAddToFavorites(recipe._id)}
+                      >
+                        Add to Favorites
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <h2 className="text-2xl font-bold text-center">No Recipes Found</h2>
+          )}
+          
+          <div className="mt-8 text-center">
+            <Link 
+              to="/addRecipe" 
+              className="bg-green-500 text-white px-6 py-3 rounded-md hover:bg-green-600 transition inline-block"
+            >
+              Add more recipes
+            </Link>
           </div>
         ) : recipes.length > 0 ? (
           <div className="grid grid-cols-[1fr] md:grid-cols-[repeat(2,_1fr)] lg:grid-cols-[repeat(3,_1fr)] gap-[2rem]">
