@@ -39,6 +39,7 @@ const Navbar = () => {
 
           
           <NavLink to="/" onClick={handleToggleMenu}>
+          <img src="https://i.ibb.co/NVdpPWM/image-removebg-preview-25.png" alt="Logo" className="logo"></img>
           <h2>Khana Khajana</h2>
                   </NavLink>{" "}
         </div>
@@ -47,7 +48,7 @@ const Navbar = () => {
             {auth ? (
               <>
                 <li>
-                  <NavLink to="recipes" onClick={handleToggleMenu}>
+                  <NavLink to="/recipes" onClick={handleToggleMenu}>
                     Recipes
                   </NavLink>{" "}
                 </li>
@@ -63,7 +64,7 @@ const Navbar = () => {
                   </NavLink>{" "}
                 </li>
                 <li>
-                  <NavLink to="login" onClick={LogoutUser}>
+                  <NavLink to="/login" onClick={LogoutUser}>
                     Logout
                   </NavLink>
                 </li>
@@ -71,13 +72,13 @@ const Navbar = () => {
             ) : (
               <>
                 <li>
-                  <NavLink to="login">Login</NavLink>{" "}
+                  <NavLink to="/login">Login</NavLink>{" "}
                 </li>
                 <li>
-                  <NavLink to="signup">SignUp</NavLink>
+                  <NavLink to="/signup">SignUp</NavLink>
                 </li>
                 <li>
-                  <NavLink to="forgotPassword">Forgot Password</NavLink>
+                  <NavLink to="/forgotPassword">Forgot Password</NavLink>
                 </li>
               </>
             )}

@@ -77,8 +77,9 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
+  /* padding: 1rem; */
   position: fixed !important;
+  height: 60px;
   top: 0;
   left: 0;
   right: 0;
@@ -90,13 +91,15 @@ nav {
 nav ul {
   list-style-type: none;
   margin: 0;
-  padding: 0;
+  padding-right: 25px;
+
 }
 
 nav ul li {
   display: inline-block;
   margin-right: 1rem;
   text-align: center;
+  
 }
 
 /* Navigation links */
@@ -182,4 +185,10 @@ nav .nav-left {
     margin: 0.5rem;
     text-align: center;
   }
+}
+
+
+.logo {
+  max-width: 200px; /* Adjust this value as needed */
+  height: auto;
 }

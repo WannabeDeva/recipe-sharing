@@ -3,6 +3,7 @@ import "../App.css";
 import { Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css"; // Import the CSS for styling
+import Navbar from "./Navbar";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -45,6 +46,8 @@ const Login = () => {
   };
 
   return (
+    <div>
+      <Navbar />
     <div className="SignupContainer">
       <form action="" onSubmit={(e) => handleSubmit(e)}>
         <h2>Login</h2>
@@ -67,6 +70,7 @@ const Login = () => {
         <span className="fill-fields-error">Please Fill all the fields</span>
       )}
       <ToastContainer />
+    </div>
     </div>
   );
 };

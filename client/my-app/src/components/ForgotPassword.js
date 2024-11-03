@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../styles/ForgotPassword.css";
 import { toast, ToastContainer } from "react-toastify";
+import Navbar from "./Navbar";
 
 const UpdatePassword = () => {
   const [formData, setFormData] = useState({
@@ -48,6 +49,8 @@ const UpdatePassword = () => {
   };
 
   return (
+    <div>
+      <Navbar />
     <div className="update-password-container">
       <h2>Update Password</h2>
       <form onSubmit={handleSubmit}>
@@ -75,6 +78,7 @@ const UpdatePassword = () => {
       </form>
       {message && <p className="error-message">{message}</p>}
       <ToastContainer />
+    </div>
     </div>
   );
 };

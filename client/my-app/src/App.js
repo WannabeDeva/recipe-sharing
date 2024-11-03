@@ -10,11 +10,14 @@ import LikedProducts from "./components/likedProducts";
 import ForgotPassword from "./components/ForgotPassword";
 import Home from "./components/Home";
 
+import RecipeDetails from "./components/RecipeDetails";
+
+
 function App() {
   return (
     <Router>
       
-      <Navbar />
+      
 
       <Routes>
         <Route path="/login" element={<Login />} />
@@ -26,6 +29,7 @@ function App() {
           <Route path="/recipes" element={<Recipes />} />
           <Route path="/" element={<Home />} />
           <Route path="/addRecipe" element={<AddRecipe />} />
+          <Route path="/recipedetails" element={<RecipeDetails />} />
         </Route>
       </Routes>
     </Router>

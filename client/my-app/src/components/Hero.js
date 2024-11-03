@@ -2,6 +2,9 @@ import React from "react";
 import pav from "../images/cooking.png";
 import { useNavigate } from "react-router-dom";
 
+import Footer from "./Footer";
+
+
 const Hero = () => {
   const navigate = useNavigate();
 
@@ -55,6 +58,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </section>
   );
 };
