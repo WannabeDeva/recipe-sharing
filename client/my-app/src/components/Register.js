@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "../App.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css"; // Import the CSS for styling
+import Navbar from "./Navbar";
 
 const Register = () => {
   const [name, setName] = useState("");
@@ -49,6 +50,8 @@ const Register = () => {
   };
 
   return (
+    <div>
+      <Navbar />
     <div className="SignupContainer">
       <form action="" onSubmit={(e) => handleSubmit(e)}>
         <h2>SignUp</h2>
@@ -73,6 +76,7 @@ const Register = () => {
         <span className="fill-fields-error">Please Fill all the fields</span>
       )}
       <ToastContainer />
+    </div>
     </div>
   );
 };

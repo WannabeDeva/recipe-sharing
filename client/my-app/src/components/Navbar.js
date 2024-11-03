@@ -37,14 +37,17 @@ const Navbar = () => {
             style={isOpen ? { transform: "rotate(90deg)" } : {}}
           />
 
-          <h2>Recipe Sharing App</h2>
+          
+          <NavLink to="/" onClick={handleToggleMenu}>
+          <img src="https://i.ibb.co/NVdpPWM/image-removebg-preview-25.png" alt="Logo" className="logo"></img>
+                  </NavLink>{" "}
         </div>
         <div className={`nav-right ${isOpen ? "open" : ""}`}>
           <ul>
             {auth ? (
               <>
                 <li>
-                  <NavLink to="recipes" onClick={handleToggleMenu}>
+                  <NavLink to="/recipes" onClick={handleToggleMenu}>
                     Recipes
                   </NavLink>{" "}
                 </li>
@@ -60,7 +63,7 @@ const Navbar = () => {
                   </NavLink>{" "}
                 </li>
                 <li>
-                  <NavLink to="login" onClick={LogoutUser}>
+                  <NavLink to="/login" onClick={LogoutUser}>
                     Logout
                   </NavLink>
                 </li>
@@ -68,13 +71,13 @@ const Navbar = () => {
             ) : (
               <>
                 <li>
-                  <NavLink to="login">Login</NavLink>{" "}
+                  <NavLink to="/login">Login</NavLink>{" "}
                 </li>
                 <li>
-                  <NavLink to="signup">SignUp</NavLink>
+                  <NavLink to="/signup">SignUp</NavLink>
                 </li>
                 <li>
-                  <NavLink to="forgotPassword">Forgot Password</NavLink>
+                  <NavLink to="/forgotPassword">Forgot Password</NavLink>
                 </li>
               </>
             )}

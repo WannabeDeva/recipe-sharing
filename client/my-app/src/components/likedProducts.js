@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../styles/likedProducts.css";
 import { toast, ToastContainer } from "react-toastify";
+import Navbar from "./Navbar";
 
 const LikedProducts = () => {
   const [likedProducts, setLikedProducts] = useState([]);
@@ -63,6 +64,8 @@ const LikedProducts = () => {
   };
 
   return (
+    <div>
+      <Navbar />
     <div className="likedRecipes">
       <h2>Favourites</h2>
       <ul>
@@ -103,6 +106,7 @@ const LikedProducts = () => {
         ))}
       </ul>
       <ToastContainer />
+    </div>
     </div>
   );
 };
